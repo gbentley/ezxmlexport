@@ -379,7 +379,8 @@ class eZXMLExportExporter
                                   'lang'              => $contentObject->attribute( 'current_language' ),
                                   'version'           => $contentObject->attribute( 'current_version' ),
                                   'creator_id'        => $contentObject->attribute( 'owner_id' ),
-                                  'remote_id'         => $contentObject->attribute( 'remote_id' ) );
+                                  'remote_id'         => $contentObject->attribute( 'remote_id' ),
+        													'parent_id'					=> $contentObject->mainParentNodeID() );
 
         $externalMetaData = array( 'contentobject_id' => $contentObject->attribute( 'id' ),
                                    'class_identifier' => $contentObject->attribute( 'class_identifier' ) );
