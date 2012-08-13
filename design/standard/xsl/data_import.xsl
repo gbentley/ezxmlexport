@@ -22,17 +22,18 @@
                 <xsl:attribute name="language">
                     <xsl:text>chi-CN</xsl:text>
                 </xsl:attribute>
-                <!-- Something wrong with ezxmlexport or data_import with remote_ids. So get it directly instead -->
                 <xsl:attribute name="parent_id">
                     <xsl:value-of select="@parent_id" />
                 </xsl:attribute>
+                <xsl:attribute name="remote_id">
+                    <xsl:value-of select="@remote_id" />
+                </xsl:attribute>
                 <xsl:for-each select="./*[not(self::object_metadata)]">
-		                <!-- Note the use of the XSL '|' (or) operator: eZ 'folder' and 'article' classes use different attribute naming conventions -->
 		                <field>
 						            <xsl:attribute name="name">
 				                    <xsl:value-of select="local-name()" />
 				                </xsl:attribute>
-		                    <xsl:value-of disable-output-escaping="yes" select="current()" />
+		                    <xsl:value-of disable-output-escaping="no" select="current()" />
 		                </field>
                 </xsl:for-each>
             </xsl:for-each>
