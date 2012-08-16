@@ -20,7 +20,7 @@
                     <xsl:value-of select="@contentobject_id" />
                 </xsl:attribute>
                 <xsl:attribute name="language">
-                    <xsl:text>chi-CN</xsl:text>
+                    <xsl:value-of select="@lang" />
                 </xsl:attribute>
                 <xsl:attribute name="parent_id">
                     <xsl:value-of select="@parent_id" />
