@@ -31,13 +31,9 @@ class eZURLXMLExport extends eZXMLExportDatatype
 
     protected function toXML()
     {
-    		$xmlExportIni = eZINI::instance( 'ezxmlexport.ini' );
     		$output = $this->contentObjectAttribute->content();
         
-        if ( $xmlExportIni->variable( 'ExportSettings', 'UseCDATA' ) === 'enabled' )
-            return "<![CDATA[\n$output]]>\n";
-        
-        return "\n$output\n";
+        return "<![CDATA[\n$output]]>\n";
     }
 }
 ?>
